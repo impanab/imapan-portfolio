@@ -117,9 +117,9 @@
     "titleItalic": "together.",
     "description": "I'm open to full-time roles, freelance projects, and interesting technical conversations. Whether you have an opportunity in mind or just want to connect — my inbox is always open.",
     "links": [
-      { "icon": "✉", "label": "impana@email.com", "url": "mailto:impana@email.com" },
-      { "icon": "in", "label": "linkedin.com/in/impana-b", "url": "https://linkedin.com" },
-      { "icon": "gh", "label": "github.com/impana-b", "url": "https://github.com" }
+      { "icon": "✉", "label": "impana@email.com", "url": "mailto:impanabtth@email.com" },
+      { "icon": "in", "label": "linkedin.com/in/impana-b", "url": "https://www.linkedin.com/in/impana-b-/" },
+      { "icon": "gh", "label": "github.com/impanab", "url": "https://github.com/impanab" }
     ]
   },
   "footer": {
