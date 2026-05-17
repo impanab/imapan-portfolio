@@ -5,6 +5,7 @@ import { getContent, updateContent, verifyPassword, uploadImage } from "../actio
 
 export default function AdminPage() {
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [data, setData] = useState<any>(null);
   const [saving, setSaving] = useState(false);
@@ -105,13 +106,33 @@ export default function AdminPage() {
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "#09100e", color: "white", cursor: "default" }}>
         <form onSubmit={handleLogin} style={{ padding: "40px", background: "#121a17", border: "1px solid rgba(80,180,130,0.1)", display: "flex", flexDirection: "column", gap: "20px", width: "100%", maxWidth: "400px" }}>
           <h2 style={{ fontFamily: "Geist Mono", fontSize: "1.2rem", color: "#4dffa8" }}>Admin Login</h2>
-          <input 
-            type="password" 
-            placeholder="Enter Admin Password" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ padding: "12px", background: "#18231f", border: "1px solid rgba(80,180,130,0.2)", color: "white", cursor: "text" }}
-          />
+          <div style={{ position: "relative" }}>
+            <input 
+              type={showPassword ? "text" : "password"} 
+              placeholder="Enter Admin Password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ width: "100%", padding: "12px", background: "#18231f", border: "1px solid rgba(80,180,130,0.2)", color: "white", cursor: "text" }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "transparent",
+                border: "none",
+                color: "#4dffa8",
+                cursor: "pointer",
+                fontSize: "0.9rem",
+                padding: "0"
+              }}
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
           {error && <p style={{ color: "red", fontSize: "0.8rem" }}>{error}</p>}
           <button type="submit" style={{ padding: "12px", background: "#4dffa8", color: "#09100e", fontWeight: "bold", border: "none", cursor: "pointer" }}>Login</button>
         </form>
