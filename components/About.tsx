@@ -14,7 +14,6 @@ export default function About({ data }: { data: any }) {
                   alt="Impana B"
                   fill
                   style={{ objectFit: "cover" }}
-                  placeholder="blur"
                   sizes="(max-width: 1024px) 100vw, 360px"
                 />
               </div>

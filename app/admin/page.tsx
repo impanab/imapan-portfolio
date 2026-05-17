@@ -25,7 +25,8 @@ export default function AdminPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const isValid = await verifyPassword(password);
+    const trimmedPassword = password.trim();
+    const isValid = await verifyPassword(trimmedPassword);
     if (isValid) {
       localStorage.setItem("admin_auth", "true");
       setIsAuthenticated(true);

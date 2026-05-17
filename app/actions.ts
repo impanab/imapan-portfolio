@@ -17,8 +17,8 @@ export async function getContent() {
 }
 
 export async function verifyPassword(password: string) {
-  const correctPassword = process.env.ADMIN_PASSWORD || "admin";
-  return password === correctPassword;
+  const correctPassword = process.env.ADMIN_PASSWORD?.trim() || "admin";
+  return password.trim() === correctPassword;
 }
 
 export async function updateContent(newContent: any) {
