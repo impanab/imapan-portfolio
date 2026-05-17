@@ -8,20 +8,27 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { getContent } from "./actions";
 
-export default function Home() {
+export default async function Home() {
+  const content = await getContent();
+
+  if (!content) {
+    return <div>Error loading content. Please ensure data/content.json exists.</div>;
+  }
+
   return (
     <>
       <Cursor />
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Education />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+      <Hero data={content.hero} />
+      <About data={content.about} />
+      <Skills data={content.expertise} />
+      <Education data={content.education} />
+      <Experience data={content.experience} />
+      <Projects data={content.projects} />
+      <Contact data={content.contact} />
+      <Footer data={content.footer} />
     </>
   );
 }

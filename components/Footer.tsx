@@ -1,9 +1,9 @@
-export default function Footer() {
+export default function Footer({ data }: { data: any }) {
   return (
     <footer>
-      <span className="f-copy">© 2026 Impana B. All rights reserved.</span>
-      <span className="f-name">Impana B.</span>
-      <span className="f-copy">Bengaluru, India</span>
+      <span className="f-copy">{data.copy}</span>
+      <span className="f-name">{data.name}</span>
+      <span className="f-copy">{data.location}</span>
     </footer>
   );
 }

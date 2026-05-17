@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 
-export default function Hero() {
+export default function Hero({ data }: { data: any }) {
   return (
     <section id="home">
       <div className="hero-glow"></div>
@@ -9,16 +9,14 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-status">
           <span className="hero-dot"></span>
-          Open to opportunities · Bengaluru, India
+          {data.status}
         </div>
-        <div className="hero-role">Software Engineer · Full-Stack</div>
+        <div className="hero-role">{data.role}</div>
         <h1>
-          Impana <i>B.</i>
+          {data.firstName} <i>{data.lastName}</i>
         </h1>
         <p className="hero-bio">
-          I build scalable web applications and refined user interfaces — currently
-          engineering enterprise products at AT&amp;T, with a growing focus on cloud
-          architecture and AI-driven features.
+          {data.bio}
         </p>
         <div className="hero-btns">
           <a href="#projects" className="btn btn-solid">
@@ -78,26 +76,14 @@ export default function Hero() {
           <span>profile.json</span>
         </div>
         <div className="panel-body">
-          <div className="pstat">
-            <div className="pn">
-              1<small>yr</small>
+          {data.stats.map((stat: any, idx: number) => (
+            <div className="pstat" key={idx}>
+              <div className="pn">
+                {stat.number}{stat.suffix && <small>{stat.suffix}</small>}
+              </div>
+              <div className="pl">{stat.label}</div>
             </div>
-            <div className="pl">Industry Experience</div>
-          </div>
-          <div className="pstat">
-            <div className="pn">2</div>
-            <div className="pl">Roles at AT&T</div>
-          </div>
-          <div className="pstat">
-            <div className="pn">
-              10<small>+</small>
-            </div>
-            <div className="pl">Technologies</div>
-          </div>
-          <div className="pstat">
-            <div className="pn">MCA</div>
-            <div className="pl">Master's in Computer Applications</div>
-          </div>
+          ))}
         </div>
       </Reveal>
     </section>

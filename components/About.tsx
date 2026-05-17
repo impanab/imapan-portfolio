@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-import profilePic from "./profile.jpg";
 
-export default function About() {
+export default function About({ data }: { data: any }) {
   return (
     <section id="about">
       <div className="about-grid">
@@ -11,7 +10,7 @@ export default function About() {
             <div className="portrait-box">
               <div className="portrait-art" style={{ position: "relative", width: "100%", height: "100%" }}>
                 <Image
-                  src={profilePic}
+                  src={data.imagePath || "/profile.jpg"}
                   alt="Impana B"
                   fill
                   style={{ objectFit: "cover" }}
@@ -19,52 +18,29 @@ export default function About() {
                   sizes="(max-width: 1024px) 100vw, 360px"
                 />
               </div>
-              <div className="portrait-cap">Impana B · Software Engineer · Bengaluru</div>
+              <div className="portrait-cap">{data.portraitCaption}</div>
             </div>
           </Reveal>
           <Reveal className="about-quote d1">
-            💬&nbsp; "Talks a lot with close ones. Quiet otherwise."
+            {data.quote}
           </Reveal>
         </div>
 
         <div>
           <Reveal className="tag">01 — About</Reveal>
           <Reveal className="h2 d1">
-            Turning ideas into<br />
-            <i>real products.</i>
+            {data.title}<br />
+            <i>{data.titleItalic}</i>
           </Reveal>
-          <Reveal className="ap d2">
-            Hi, I'm <strong>Impana B</strong> — a software engineer who fell in love
-            with building things for the web. What started as curiosity became a
-            full-blown career in <strong>full-stack development</strong>, where I
-            solve meaningful problems and deliver experiences that feel effortless to
-            use.
-          </Reveal>
-          <Reveal className="ap d2">
-            At <strong>AT&T</strong>, I work on scalable enterprise web applications —
-            thinking through architecture, sweating performance details, and shipping
-            features alongside cross-functional teams. Outside of that, I'm deepening
-            my expertise in <strong>Microsoft Azure</strong> and exploring how AI
-            agents can transform the way people interact with digital products.
-          </Reveal>
-          <Reveal className="ap d3">
-            I believe great software lives at the intersection of clean engineering
-            and intentional design. Whether I'm building a pixel-perfect interface or
-            architecting a resilient API, I care deeply about the quality of every
-            layer.
-          </Reveal>
+          {data.paragraphs.map((p: string, i: number) => (
+            <Reveal key={i} className={`ap ${i < 2 ? 'd2' : 'd3'}`}>
+              <span dangerouslySetInnerHTML={{ __html: p }} />
+            </Reveal>
+          ))}
           <Reveal className="chips d3">
-            <span className="chip">React.js</span>
-            <span className="chip">Next.js</span>
-            <span className="chip">Node.js</span>
-            <span className="chip">MongoDB</span>
-            <span className="chip">MySQL</span>
-            <span className="chip">Express.js</span>
-            <span className="chip">Tailwind CSS</span>
-            <span className="chip">Docker</span>
-            <span className="chip">Microsoft Azure</span>
-            <span className="chip">Python</span>
-            <span className="chip">Java</span>
+            {data.skills.map((skill: string, i: number) => (
+              <span key={i} className="chip">{skill}</span>
+            ))}
           </Reveal>
         </div>
       </div>

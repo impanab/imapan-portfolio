@@ -3,13 +3,12 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 
-export default function Contact() {
+export default function Contact({ data }: { data: any }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleWhatsAppSend = () => {
-    // Reads the phone number from .env.local
     const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ""; 
     const rawText = `Hi Impana, my name is ${name} (${email}).\n\n${message}`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(rawText)}`;
@@ -25,32 +24,25 @@ export default function Contact() {
     
     window.location.href = url;
   };
+
   return (
     <section id="contact">
       <Reveal className="tag">06 — Contact</Reveal>
       <Reveal className="h2 d1">
-        Let's build something <i>together.</i>
+        {data.title} <i>{data.titleItalic}</i>
       </Reveal>
       <div className="contact-wrap">
         <Reveal className="d1">
           <p className="contact-lede">
-            I'm open to full-time roles, freelance projects, and interesting
-            technical conversations. Whether you have an opportunity in mind or just
-            want to connect — my inbox is always open.
+            {data.description}
           </p>
           <div className="c-links">
-            <a href="mailto:impana@email.com" className="c-link">
-              <span className="c-icon">✉</span>
-              <span className="c-label">impana@email.com</span>
-            </a>
-            <a href="https://linkedin.com" className="c-link">
-              <span className="c-icon">in</span>
-              <span className="c-label">linkedin.com/in/impana-b</span>
-            </a>
-            <a href="https://github.com" className="c-link">
-              <span className="c-icon">gh</span>
-              <span className="c-label">github.com/impana-b</span>
-            </a>
+            {data.links.map((link: any, idx: number) => (
+              <a key={idx} href={link.url} className="c-link">
+                <span className="c-icon">{link.icon}</span>
+                <span className="c-label">{link.label}</span>
+              </a>
+            ))}
           </div>
         </Reveal>
         <Reveal className="form d2">

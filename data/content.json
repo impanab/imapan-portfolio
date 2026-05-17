@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "status": "Open to opportunities · Bengaluru, India",
+    "role": "Software Engineer · Full-Stack",
+    "firstName": "Impana ",
+    "lastName": "B.",
+    "bio": "I build scalable web applications and refined user interfaces — currently engineering enterprise products at AT&T, with a growing focus on cloud architecture and AI-driven features.",
+    "stats": [
+      { "number": "1", "suffix": "yr", "label": "Industry Experience" },
+      { "number": "2", "suffix": "", "label": "Roles at AT&T" },
+      { "number": "10", "suffix": "+", "label": "Technologies" },
+      { "number": "MCA", "suffix": "", "label": "Master's in Computer Applications" }
+    ]
+  },
+  "about": {
+    "imagePath": "/profile.jpg",
+    "portraitCaption": "Impana B · Software Engineer · Bengaluru",
+    "quote": "💬 \"Talks a lot with close ones. Quiet otherwise.\"",
+    "title": "Turning ideas into",
+    "titleItalic": "real products.",
+    "paragraphs": [
+      "Hi, I'm <strong>Impana B</strong> — a software engineer who fell in love with building things for the web. What started as curiosity became a full-blown career in <strong>full-stack development</strong>, where I solve meaningful problems and deliver experiences that feel effortless to use.",
+      "At <strong>AT&T</strong>, I work on scalable enterprise web applications — thinking through architecture, sweating performance details, and shipping features alongside cross-functional teams. Outside of that, I'm deepening my expertise in <strong>Microsoft Azure</strong> and exploring how AI agents can transform the way people interact with digital products.",
+      "I believe great software lives at the intersection of clean engineering and intentional design. Whether I'm building a pixel-perfect interface or architecting a resilient API, I care deeply about the quality of every layer."
+    ],
+    "skills": ["React.js", "Next.js", "Node.js", "MongoDB", "MySQL", "Express.js", "Tailwind CSS", "Docker", "Microsoft Azure", "Python", "Java"]
+  },
+  "expertise": [
+    {
+      "icon": "⌥",
+      "title": "Frontend Engineering",
+      "description": "Building responsive, accessible, and performant user interfaces. From component architecture to pixel-level polish, I care about every layer of the frontend experience.",
+      "tags": ["HTML5 & CSS3", "JavaScript", "React.js", "Next.js", "Angular.js", "Bootstrap", "Tailwind CSS"]
+    },
+    {
+      "icon": "⌘",
+      "title": "Backend & APIs",
+      "description": "Designing server-side systems with clean separation of concerns. REST API development, authentication flows, and performant data access patterns are daily fundamentals.",
+      "tags": ["Node.js", "Express.js", "REST APIs", "Git & GitHub", "Agile / Scrum"]
+    },
+    {
+      "icon": "⊞",
+      "title": "Databases",
+      "description": "Comfortable across relational and document-oriented databases. Thoughtful about schema design, query performance, and data modelling for production systems.",
+      "tags": ["MongoDB", "MySQL", "SQL"]
+    },
+    {
+      "icon": "◈",
+      "title": "Cloud & Languages",
+      "description": "Deploying containerised applications on cloud infrastructure and writing backend logic across multiple languages. Currently deepening Azure expertise.",
+      "tags": ["Microsoft Azure", "Docker", "Python", "Java", "JavaScript"]
+    }
+  ],
+  "education": [
+    {
+      "period": "2022 — 2023",
+      "degree": "Master of Computer Applications (MCA)",
+      "school": "Bangalore Institute of Technology",
+      "description": "Advanced postgraduate study in software engineering, system design, and modern programming paradigms. Built the academic depth that underpins my current work in enterprise full-stack development."
+    },
+    {
+      "period": "2020 — 2021",
+      "degree": "B.Sc. Computer Science",
+      "school": "Government First Grade College, Thirthahalli",
+      "description": "Undergraduate degree with a major in Computer Science — establishing rigorous foundations in data structures, algorithms, databases, and programming that every engineering decision I make today is built on."
+    },
+    {
+      "period": "2017 — 2018",
+      "degree": "Higher Secondary (Science)",
+      "school": "Government P U College, Ripponpet",
+      "description": "Completed science stream education, cultivating the analytical thinking and quantitative reasoning that forms the bedrock of all technical problem-solving."
+    }
+  ],
+  "experience": [
+    {
+      "period": "Apr 2025 — Present",
+      "title": "Senior Associate Software Engineer",
+      "location": "AT&T · Bengaluru, India",
+      "company": "AT&T",
+      "description": "Leading frontend development of internal enterprise dashboards and web applications used across business units. Collaborate directly with product and design teams to define technical architecture, drive performance optimisations, and uphold code quality at scale. Actively involved in sprint planning, design reviews, and cross-team technical discussions in an agile environment.",
+      "tags": ["React.js", "Next.js", "Node.js", "MongoDB", "Tailwind CSS"]
+    },
+    {
+      "period": "Apr 2024 — Mar 2025",
+      "title": "Software Engineering Apprentice",
+      "location": "AT&T · Bengaluru, India",
+      "company": "AT&T",
+      "description": "Contributed to enterprise software projects across the full stack — building React UI components, developing Express APIs, integrating REST services, and shipping features end to end. Developed strong professional foundations in software delivery, collaborative development workflows, and engineering best practices under senior mentorship.",
+      "tags": ["JavaScript", "Express.js", "MySQL", "REST API", "Git"]
+    }
+  ],
+  "projects": [
+    {
+      "featured": true,
+      "number": "001 — Featured",
+      "title": "Enterprise Dashboard Platform",
+      "description": "A high-performance analytics and monitoring dashboard built for internal operations at AT&T. Features real-time data visualisation, multi-level access control, and a fully responsive layout serving cross-functional teams. Architected with scalability and long-term maintainability as first principles.",
+      "tags": ["React.js", "Node.js", "MongoDB", "Tailwind CSS", "REST API"]
+    },
+    {
+      "featured": false,
+      "number": "002",
+      "title": "AI-Augmented Web App",
+      "description": "A full-stack application integrating AI-driven features — smart content suggestions, dynamic generation, and Azure-hosted inference services — to meaningfully enhance user workflows.",
+      "tags": ["Next.js", "Azure", "Node.js", "MongoDB"]
+    },
+    {
+      "featured": false,
+      "number": "003",
+      "title": "Full-Stack E-Commerce",
+      "description": "End-to-end storefront with product management, cart flows, and payment integration. Built with Next.js for SSR performance and MySQL for robust transactional data handling.",
+      "tags": ["Next.js", "Express.js", "MySQL"]
+    }
+  ],
+  "contact": {
+    "title": "Let's build something",
+    "titleItalic": "together.",
+    "description": "I'm open to full-time roles, freelance projects, and interesting technical conversations. Whether you have an opportunity in mind or just want to connect — my inbox is always open.",
+    "links": [
+      { "icon": "✉", "label": "impana@email.com", "url": "mailto:impana@email.com" },
+      { "icon": "in", "label": "linkedin.com/in/impana-b", "url": "https://linkedin.com" },
+      { "icon": "gh", "label": "github.com/impana-b", "url": "https://github.com" }
+    ]
+  },
+  "footer": {
+    "copy": "© 2026 Impana B. All rights reserved.",
+    "name": "Impana B.",
+    "location": "Bengaluru, India"
+  }
+}
