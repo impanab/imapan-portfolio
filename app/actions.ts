@@ -6,6 +6,31 @@ import { revalidatePath } from "next/cache";
 
 const contentFilePath = path.join(process.cwd(), "data", "content.json");
 
+function readAdminPasswordFromDotenv() {
+  const envFiles = [".env.local", ".env"];
+  for (const envFile of envFiles) {
+    const envPath = path.join(process.cwd(), envFile);
+    if (!fs.existsSync(envPath)) continue;
+
+    const content = fs.readFileSync(envPath, "utf8");
+    for (const line of content.split(/\r?\n/)) {
+      const trimmedLine = line.trim();
+      if (!trimmedLine || trimmedLine.startsWith("#")) continue;
+      const [key, ...rest] = trimmedLine.split("=");
+      if (key === "ADMIN_PASSWORD") {
+        return rest.join("=").trim().replace(/^(["'])(.*)\1$/, "$2");
+      }
+    }
+  }
+  return undefined;
+}
+
+function getAdminPassword() {
+  const envPassword = process.env.ADMIN_PASSWORD?.trim();
+  if (envPassword) return envPassword;
+  return readAdminPasswordFromDotenv() || "admin";
+}
+
 export async function getContent() {
   try {
     const fileContents = fs.readFileSync(contentFilePath, "utf8");
@@ -17,7 +42,7 @@ export async function getContent() {
 }
 
 export async function verifyPassword(password: string) {
-  const correctPassword = process.env.ADMIN_PASSWORD?.trim() || "admin";
+  const correctPassword = getAdminPassword();
   return password.trim() === correctPassword;
 }
 

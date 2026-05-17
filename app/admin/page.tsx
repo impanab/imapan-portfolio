@@ -26,6 +26,7 @@ export default function AdminPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     const trimmedPassword = password.trim();
     const isValid = await verifyPassword(trimmedPassword);
     if (isValid) {
